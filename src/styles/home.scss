@@ -1,0 +1,75 @@
+@import "colors";
+
+.home {
+  height: 100vh;
+  overflow-x: hidden;
+
+  div {
+    padding-left: 8rem;
+    padding-top: 15rem;
+    > h1 {
+      font-size: 4rem;
+      text-transform: uppercase;
+    }
+
+    > p {
+      font-size: 1.2rem;
+    }
+  }
+
+  > a {
+    display: block;
+    margin: 2rem 8rem;
+    width: 10rem;
+    background-color: $red;
+    color: white;
+    text-align: center;
+    border: none;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    &:hover {
+      background-color: $darkred;
+    }
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/backg.jpg");
+    background-position: -20% 60%;
+    background-repeat: no-repeat;
+    
+    background-size: cover;
+    position: absolute;
+    left: 0%;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home {
+    > div {
+
+
+      text-align: center;
+      padding-top: 15rem;
+      padding-left: 0rem;
+      margin-right: 3rem;
+    
+      justify-content: flex-end;
+    }
+
+    > a {
+      margin: 2rem auto;
+    }
+    &::before{
+    // background-image: url("../assets/bg.svg");
+    background-position: 0% -500%;
+
+    
+  }
+}
+}
