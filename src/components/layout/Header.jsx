@@ -7,7 +7,7 @@ import {motion} from "framer-motion"
 
 
 
-const header = ({isAuthenticated=true}) => {
+const header = ({isAuthenticated=false}) => {
   return (
     <nav>
         <motion.div

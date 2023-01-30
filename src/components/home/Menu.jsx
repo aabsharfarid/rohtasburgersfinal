@@ -3,9 +3,37 @@ import MenuCard from "./MenuCard";
 import burger1 from "../../assets/burger1.png";
 import burger2 from "../../assets/burger2.png";
 import burger3 from "../../assets/burger3.png";
+import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 const Menu = () => {
-  const addToCartHandler = (itemNum) => {};
+  const dispatch = useDispatch();
+
+  const addToCartHandler = (itemNum) => {
+    switch (itemNum) {
+      case 1:
+        dispatch({ type: "cheeseBurgerIncrement" });
+        dispatch({ type: "calculatePrice" });
+        toast.success("Added To Cart");
+        break;
+      case 2:
+        dispatch({ type: "vegCheeseBurgerIncrement" });
+        dispatch({ type: "calculatePrice" });
+        toast.success("Added To Cart");
+        break;
+      case 3:
+        dispatch({ type: "burgerWithFriesIncrement" });
+        dispatch({ type: "calculatePrice" });
+        toast.success("Added To Cart");
+        break;
+
+      default:
+        dispatch({ type: "cheeseBurgerIncrement" });
+        dispatch({ type: "calculatePrice" });
+        toast.success("Added To Cart");
+        break;
+    }
+  };
 
   return (
     <section id="menu">
@@ -25,7 +53,7 @@ const Menu = () => {
           burgerSrc={burger2}
           price={329}
           title="Veg Cheese Burger"
-          delay={0.2}
+          delay={0.5}
           handler={addToCartHandler}
         />
         <MenuCard
@@ -33,7 +61,7 @@ const Menu = () => {
           burgerSrc={burger3}
           price={529}
           title="Cheese Burger with French Fries"
-          delay={0.3}
+          delay={0.8}
           handler={addToCartHandler}
         />
       </div>
@@ -42,3 +70,13 @@ const Menu = () => {
 };
 
 export default Menu;
+
+
+
+
+
+
+
+
+
+
